@@ -1,0 +1,27 @@
+<div class="layout-topbar">
+  <a class="layout-topbar-logo" routerLink="">
+    <img src="assets/layout/images/logo1.svg" alt="logo">
+    <span>DentiStaff Admin</span>
+  </a>
+
+  <a class="p-link layout-menu-button layout-topbar-button" (click)="appMain.toggleMenu($event)">
+    <i class="pi pi-bars"></i>
+  </a>
+
+  <div class="flex align-items-center layout-topbar-menu-button">
+    <!--a class="p-link layout-topbar-button" (click)="userMobile.toggle($event)">
+      <i class="pi pi-ellipsis-v"></i>
+    </a-->
+    <a class="p-link layout-topbar-button" (click)="displayUserPanel()">
+      <img src="./assets/icon/user.svg" alt="">
+    </a>
+  </div>
+  <!--  [ngClass]="{'layout-topbar-menu-mobile-active':appMain.topMenuActive}" -->
+</div>
+
+
+<!--p-overlayPanel #userMobile>
+  <ng-template pTemplate>
+
+  </ng-template>
+</p-overlayPanel-->

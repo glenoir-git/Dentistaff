@@ -31,7 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ionicons/dist/scss/ionicons.scss"
             ]
           },
           "configurations": {
@@ -110,6 +111,16 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "sakai-ng:build:production",
+            "firebaseProject": "dentistaff-d1dcf",
+            "firebaseHostingSite": "dentistaff-d1dcf"
           }
         }
       }

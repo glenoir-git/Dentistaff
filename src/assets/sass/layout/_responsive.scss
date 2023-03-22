@@ -1,0 +1,235 @@
+@media screen and (min-width: 1729px) {
+  .layout-main {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1048px) {
+  .layout-topbar {
+    display: none;
+  }
+  .layout-wrapper {
+    &.layout-overlay {
+      .layout-main-container {
+        margin-left: 0 !important;
+        padding-left: 2rem;
+      }
+
+      .layout-sidebar {
+        transform: translateX(-100%);
+        left: 0;
+        top: 0;
+        height: 100vh;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &.layout-overlay-sidebar-active {
+        .layout-sidebar {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &.layout-static {
+      .layout-main-container {
+        margin-left: 316px;
+        padding-top: 0.5rem;
+      }
+
+      &.layout-static-sidebar-inactive {
+        .layout-sidebar {
+          transform: translateX(-100%);
+          left: 0;
+        }
+
+        .layout-main-container {
+          margin-left: 0 !important;
+          padding-left: 2rem;
+        }
+      }
+    }
+
+    .layout-mask {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1048px) {
+  .userPanelResponsive {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    z-index: 100;
+    height: 100vh;
+    background: white;
+  }
+
+  .top-section {
+    .ico-btn {
+      display: none;
+    }
+  }
+
+  .main {
+
+    padding: 0px 25px;
+
+    .invest-centered {
+      width: 100%;
+    }
+
+    &.transactions {
+      .basic-card-ico {
+        margin-bottom: 18px;
+
+        &:first-child {
+          margin-right: 0 !important;
+        }
+      }
+    }
+
+    .grid {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .panel {
+      &:first-child {
+        margin-right: 0 !important;
+        width: 100% !important;
+      }
+
+      &:nth-child(2) {
+        width: 0px !important;
+        display: none;
+      }
+    }
+
+    .ico-card {
+      .social {
+        flex-direction: column;
+
+        .divided {
+          display: none;
+        }
+
+        .ico {
+          &:first-child {
+            margin-bottom: 18px;
+          }
+
+          align-items: center;
+          justify-content: center;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .ligne {
+        align-items: flex-start;
+
+        .ico {
+          width: 20%;
+          height: 100%;
+        }
+      }
+
+      .card-container {
+        flex-direction: column;
+
+        .mr-5 {
+          margin-right: 0 !important;
+        }
+
+        .price-ico-card {
+          width: 100%;
+          margin-bottom: 18px;
+
+        }
+      }
+
+      &:first-child {
+        .content-card {
+          flex-direction: column;
+
+          .section {
+            width: 100%;
+
+            .ico-ctn-info {
+              flex-direction: column;
+
+              .sub-card {
+                &:last-child {
+                  margin-top: 18px;
+                }
+
+                width: 100%;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .layout-wrapper {
+    .layout-main {
+      padding: 16px 8px;
+    }
+
+    .layout-main-container {
+      margin-left: 0 !important;
+      padding: 4.5rem 0 0 0;
+    }
+
+    .layout-sidebar {
+      background-color: #fff;
+      transform: translateX(-100%);
+      left: 0;
+      top: 0;
+      height: 100vh;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .layout-mask {
+      z-index: 998;
+      background-color: var(--mask-bg);
+
+      &.layout-mask-enter-from,
+      &.layout-mask-leave-to {
+        background-color: transparent;
+      }
+    }
+
+    &.layout-mobile-sidebar-active {
+      .layout-sidebar {
+        transform: translateX(0);
+      }
+
+      .layout-mask {
+        display: block;
+      }
+    }
+  }
+
+  .body-overflow-hidden {
+    overflow: hidden;
+  }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+  .layout-wrapper.layout-static {
+    .layout-main-container {
+      margin-left: 130px;
+    }
+  }
+}

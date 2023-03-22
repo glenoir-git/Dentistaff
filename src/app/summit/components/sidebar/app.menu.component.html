@@ -1,0 +1,89 @@
+<p-confirmDialog key="logout" [header]="'Common.logout'" icon="pi pi-exclamation-circle"></p-confirmDialog>
+
+<div class="layout-menu-container flex">
+    <ul
+      class="layout-menu flex flex-column justify-content-between  directory-list"
+      role="menu"
+      (keydown)="onKeydown($event)"
+    >
+      <div class="flex flex-column">
+        <button
+            pButton
+            *ngIf="menuActiveMobile"
+            class="mt-2 userButton text-gray-900"
+            icon="pi pi-arrow-left"
+            (click)="appMain.toggleMenu($event)"
+          ></button>
+        <button
+          pButton
+          *ngFor="let item of directory"
+          (click)="openDirectory(item)"
+          [pTooltip]="item.title" tooltipPosition="right"
+          [showDelay]="0"
+          [ngClass]="{ active: item.active }"
+          class="directoryButton mt-3"
+          [ngStyle]="{ background: item.background }"
+        >
+          <img
+            [ngClass]="{ active: item.active, rotated: true }"
+            [ngStyle]="{ color: item.color }"
+            src="assets/layout/images/logo1.svg"
+            class="svg-icon"
+          />
+        </button>
+      </div>
+      <div class="flex flex-column">
+        <ng-container *ngFor="let item of userMenus">
+          <button
+            pButton
+            *ngIf="item.icon"
+            [pTooltip]="item.label" tooltipPosition="right"
+            [showDelay]="0"
+            (click)="item.action && item.action()"
+            [ngClass]="{ active: item.active }"
+            class="mt-2 userButton text-gray-900"
+            [icon]="item.icon"
+            [ngStyle]="{ background: item.background }"
+          ></button>
+        </ng-container>
+        <button
+            pButton
+            pTooltip="'menu.user.buttonlabel'" tooltipPosition="right"
+            [showDelay]="0"
+            (click)="openSettings()"
+            class="mt-2 settingsButton p-0 text-gray-900"
+          >
+            <img
+              [src]="(user$ | async)?.avatar ?? 'assets/icon/exempleAvatar.jpg'"
+              class="svg-icon w-full"
+            />
+          </button>
+      </div>
+    </ul>
+    <ul
+      class="layout-menu w-full col-auto py-3"
+      role="menu"
+      (keydown)="onKeydown($event)"
+    >
+      <!--h4 class="mb-4">{{openedDirectory.title}}</h4-->
+      <li
+        app-menu
+        class="layout-menuitem-category"
+        *ngFor="let item of openedDirectory.childrens; let i = index"
+        role="none"
+      >
+        <div class="pl-3 layout-menuitem-root-text" [attr.aria-label]="item.label">
+          {{ item.label }}
+        </div>
+        <ul role="menu">
+          <li
+            app-menuitem
+            *ngFor="let child of item.items"
+            [item]="child"
+            [index]="i"
+            role="none"
+          ></li>
+        </ul>
+      </li>
+    </ul>
+  </div>

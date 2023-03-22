@@ -1,0 +1,42 @@
+.summitModal {
+    padding: 2rem 1.5rem 0 1.5rem;
+    .close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 1.5rem;
+      padding: 0px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      color: rgb(66, 66, 66);
+      background: transparent;
+      cursor: pointer;
+    }
+    .modal-header {
+      .title {
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+        color: #1a202c;
+      }
+      .subtitle {
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+    .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .actions-buttons {
+            width: 100%;
+            button {
+              width: 100%;
+              text-align: center;
+            }
+        }
+      }
+}

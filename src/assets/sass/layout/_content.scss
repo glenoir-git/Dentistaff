@@ -1,0 +1,20 @@
+.layout-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 6rem 0.5rem 0.5rem 0.5rem;
+    transition: margin-left $transitionDuration;
+}
+
+.layout-wrapper-bg {
+    background: linear-gradient(71.27deg, rgba(214, 5, 128, 0.2) 1.02%, rgba(0, 255, 255, 0.2) 97.39%), #FFFFFF;
+}
+
+.layout-main {
+    flex: 1 1 auto;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 1rem;
+}
+

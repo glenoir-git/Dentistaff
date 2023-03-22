@@ -8,7 +8,281 @@ $gutter: 1rem; //for primeflex grid system
 @import "../node_modules/primeflex/primeflex.scss";
 @import "../node_modules/primeicons/primeicons.css";
 
-/* Demos */
-@import "assets/demo/styles/flags/flags.css";
-@import "assets/demo/styles/badges.scss";
-@import "assets/demo/styles/code.scss";
+@import "assets/sass/layout/_variables";
+@import "assets/sass/layout/_layout";
+@import "assets/sass/overrides/_overrides";
+@import "assets/sass/flag.scss";
+@import "assets/sass/modal.scss";
+@import './assets/sass/fonts';
+@import 'assets/sass/responsive';
+
+
+
+:root {
+    --main-font-family: "Roboto";
+    --main-font-family-bold: "Roboto-Bold";
+    --brand-color: #ff9900;
+    --quantum-color: #e4194d;
+    --impulse-color: #f79507;
+    --main-background-color-gradient-start: #D60580;
+    --main-background-color-gradient-end: #00FFFF;
+    --main-background-color-gradient-start-transparent: #d6057f28;
+    --main-background-color-gradient-end-transparent: #00ffff28;
+    --menu-header-font-size: 22px;
+    --menu-list-background: #fff;
+    --menu-list-font-size: 12px;
+    --custom-header-height: 100px;
+    --custom-header-background-start: #1A202C;
+    --custom-header-background-end: #1A202C;
+  
+  }
+  
+  .overlay-right {
+    left: unset !important;
+    right: 0 !important;
+    width: fit-content !important;
+  }
+  
+  .main-text {
+    font-family: 'Poppins-Bold' !important;
+    font-size: 32px;
+  
+  }
+  
+  .gradient-text {
+    font-family: 'Poppins-Bold' !important;
+    font-size: 32px;
+    // margin-bottom: 16px;
+    background: -webkit-linear-gradient(71deg, var(--main-background-color-gradient-start) 1%, var(--main-background-color-gradient-end) 97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .layout-menu .ion::before, .layout-menuitem-icon::before {
+    font-size: 22px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .layout-menu .ion::before {
+    display: grid;
+    place-items: center;
+  }
+  
+  .p-password .p-inputtext {
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+  
+  .gradient-button {
+    background: linear-gradient(71deg, var(--main-background-color-gradient-start) 1%, var(--main-background-color-gradient-end) 97%);
+    border: none;
+  }
+  
+  .gradient-button:hover {
+    background: linear-gradient(71deg, var(--main-background-color-gradient-start) 15%, var(--main-background-color-gradient-end) 83%) !important;
+  }
+  
+  .neutral-button {
+    background: #CCCCCC;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .neutral-button:hover {
+    background: #CCCCCC;
+    background-color: #CCCCCC;
+  }
+  
+  .border-gradient {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-image: linear-gradient(white, white), linear-gradient(to right, red, orange);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  
+    .p-button-label {
+      background: -webkit-linear-gradient(71deg, var(--main-background-color-gradient-start) 1%, var(--main-background-color-gradient-end) 97%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  
+  app-login,
+  app-forgot,
+  app-reset-password,
+  app-register,
+  app-verify-email {
+  
+    .no-account {
+      margin-top: 30px;
+      cursor: pointer;
+      text-align: center;
+    }
+  
+    .form-error {
+      color: red;
+      font-size: small;
+      text-align: left;
+      width: 83%;
+      margin: 0 8.5%;
+    }
+  
+    .form-block {
+  
+      margin: 40px 0;
+      width: 505px;
+      max-width: 90vw;
+      background: white;
+      position: relative;
+      border-radius: 16px;
+      padding: 40px;
+  
+      .top-container {
+        margin-bottom: 30px;
+        text-align: center;
+  
+        .main-text {
+          font-family: 'Poppins-Bold' !important;
+          font-size: 32px;
+        }
+  
+        .sub-text {
+          margin-top: 16px;
+          font-family: var(--main-font-family) !important;
+          color: #718096;
+          font-size: 16px;
+        }
+      }
+  
+      .form-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+  
+      .title {
+        text-align: center;
+        font-size: 20px;
+      }
+  
+      .password-errors {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+  
+        span {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  
+    .actions {
+      margin-top: 40px;
+    }
+  }
+  
+  .p-dynamic-dialog {
+    max-width: 95vw !important;
+    max-height: 95vh !important;
+  }
+  
+  .p-sortable-column-icon {
+    color: #718096 !important;
+  }
+  
+  
+  body.dark {
+    background: $dark-body-bg;
+  
+    .info {
+      svg {
+        path {
+          stroke: white;
+          color: white;
+        }
+      }
+    }
+  
+    .layout-menu li .layout-menuitem-root-text {
+      color: white;
+    }
+    .layout-menu li a span{
+      color: #C0C0C0;
+    }
+  
+    .pi-sun, .pi-globe, .pi-info-circle{
+      &::before{
+        color:white;
+      }
+    }
+    .p-card .p-card-body, .surface-section{
+      background: $dark-bg-card;
+    }
+    .ico-btn {
+      &.outline {
+        background: $dark-bg-subcard;
+      }
+    }
+  
+    .layout-main, .layout-sidebar {
+      background: $dark-bg-global;
+    }
+  
+    .ico-card {
+      background: $dark-bg-card;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+    }
+  
+    .ico-subtitle, .ico-h6, .ico-h6-price, .medium-txt {
+      color: white !important;
+    }
+  
+    .xmall-txt, .count, .small-txt {
+      color: #C0C0C0 !important;
+    }
+  
+    .ico-card {
+      .sub-card, .height-card, .price-ico-card, .basic-card-ico {
+        background: $dark-bg-subcard !important;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) !important;
+      }
+  
+      .sub-card, .height-card {
+        .label {
+          color: #C0C0C0 !important;
+        }
+  
+        .price-txt {
+          color: white;
+        }
+      }
+    }
+  
+    .profil-card {
+      .summit {
+        color: #C0C0C0 !important;
+      }
+  
+      .input-sponsor {
+        background: $dark-bg-input;
+  
+        span {
+          color: white;
+        }
+      }
+  
+      .string-ligne {
+        background: $dark-bg-subcard;
+      }
+  
+      .summit-tokens .actions .prices .label, .sponsorship .actions .prices .label {
+        color: #C0C0C0 !important;
+  
+      }
+    }
+  }
+  

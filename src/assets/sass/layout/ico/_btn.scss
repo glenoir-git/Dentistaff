@@ -1,0 +1,56 @@
+@import "./../variables";
+
+.ico-btn {
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(71.27deg, #D60580 1.02%, #00FFFF 97.39%);
+  border-radius: 5px;
+  padding: 11px 27px;
+  font-family: 'Roboto-Bold', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  /* Others/White */
+
+  color: $white;
+
+  &.outline {
+    position: relative;
+    background: white;
+
+    span {
+      background: linear-gradient(71.27deg, #D60580 1.02%, #00FFFF 97.39%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      box-sizing: border-box;
+    }
+
+  }
+
+  &.disabled {
+    cursor: auto;
+    pointer-events: none;
+    background: #A0AEC0;
+  }
+}
+
+.overlay-btn {
+  position: absolute;
+  z-index: 0;
+  top: -4%;
+  left: -1.5%;
+  width: 103%;
+  height: 108%;
+  border-radius: 5px;
+  background: linear-gradient(71.27deg, #D60580 1.02%, #00FFFF 97.39%);
+}

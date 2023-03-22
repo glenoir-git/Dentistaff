@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+
+  .modal-container {
+    padding: 2px !important;
+
+    .modal-body {
+      margin: 12px 0 !important;
+      padding: 10px !important;
+    }
+
+    .modal-footer {
+      justify-content: center !important;
+      flex-flow: wrap-reverse;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}

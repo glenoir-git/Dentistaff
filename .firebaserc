@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dentistaff-d1dcf": {
+      "hosting": {
+        "sakai-ng": [
+          "dentistaff-d1dcf"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dentistaff-d1dcf"
+  }
+}

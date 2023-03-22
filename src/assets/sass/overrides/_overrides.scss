@@ -1,0 +1,19 @@
+// Suggested location to add your overrides so that migration would be easy by just updating the SASS folder in the future
+p-password .p-password {
+  width: 100%;
+  .p-inputtext {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+p-password .p-inputtext {
+  width: 100%;
+  padding: 1rem;
+}
+
+
+p-dropdown-item {
+  padding: 0.25rem 0.75rem;
+}
+
